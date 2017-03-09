@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76E9A5ED1E71AA21005B68A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A5EC1E71AA21005B68A0 /* main.m */; };
+		76E9A5F01E71AA21005B68A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A5EF1E71AA21005B68A0 /* AppDelegate.m */; };
+		76E9A5F31E71AA21005B68A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A5F21E71AA21005B68A0 /* ViewController.m */; };
+		76E9A5F61E71AA21005B68A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E9A5F41E71AA21005B68A0 /* Main.storyboard */; };
+		76E9A5F81E71AA21005B68A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E9A5F71E71AA21005B68A0 /* Assets.xcassets */; };
+		76E9A5FB1E71AA21005B68A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E9A5F91E71AA21005B68A0 /* LaunchScreen.storyboard */; };
+		76E9A6061E71AA66005B68A0 /* NSTimer+VDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A6011E71AA66005B68A0 /* NSTimer+VDAdd.m */; };
+		76E9A6071E71AA66005B68A0 /* UIView+VDFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A6031E71AA66005B68A0 /* UIView+VDFrame.m */; };
+		76E9A6081E71AA66005B68A0 /* VDFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9A6051E71AA66005B68A0 /* VDFlashLabel.m */; };
+		8FBCEA1BB10FC360B78A63DB /* libPods-VDFlashLabel-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DCB86692BC2272FE8D1DEF /* libPods-VDFlashLabel-Demo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02A312542AE56C5A315A0C82 /* Pods-VDFlashLabel-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDFlashLabel-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VDFlashLabel-Demo/Pods-VDFlashLabel-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		06DCB86692BC2272FE8D1DEF /* libPods-VDFlashLabel-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VDFlashLabel-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4B058C142C5742E0170351 /* libPods-VDFlashLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VDFlashLabel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E9A5E91E71AA21005B68A0 /* VDFlashLabel-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VDFlashLabel-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E9A5EC1E71AA21005B68A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76E9A5EE1E71AA21005B68A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		76E9A5EF1E71AA21005B68A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		76E9A5F11E71AA21005B68A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		76E9A5F21E71AA21005B68A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		76E9A5F51E71AA21005B68A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76E9A5F71E71AA21005B68A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76E9A5FA1E71AA21005B68A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		76E9A5FC1E71AA21005B68A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76E9A6001E71AA66005B68A0 /* NSTimer+VDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+VDAdd.h"; sourceTree = "<group>"; };
+		76E9A6011E71AA66005B68A0 /* NSTimer+VDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+VDAdd.m"; sourceTree = "<group>"; };
+		76E9A6021E71AA66005B68A0 /* UIView+VDFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VDFrame.h"; sourceTree = "<group>"; };
+		76E9A6031E71AA66005B68A0 /* UIView+VDFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDFrame.m"; sourceTree = "<group>"; };
+		76E9A6041E71AA66005B68A0 /* VDFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDFlashLabel.h; sourceTree = "<group>"; };
+		76E9A6051E71AA66005B68A0 /* VDFlashLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDFlashLabel.m; sourceTree = "<group>"; };
+		A9C3CAAC7BA362E11C75CB7F /* Pods-VDFlashLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDFlashLabel.release.xcconfig"; path = "Pods/Target Support Files/Pods-VDFlashLabel/Pods-VDFlashLabel.release.xcconfig"; sourceTree = "<group>"; };
+		CEE15633BEBAB99A017DFFDE /* Pods-VDFlashLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDFlashLabel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDFlashLabel/Pods-VDFlashLabel.debug.xcconfig"; sourceTree = "<group>"; };
+		E2365349A793862B6855B6DB /* Pods-VDFlashLabel-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDFlashLabel-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDFlashLabel-Demo/Pods-VDFlashLabel-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76E9A5E61E71AA21005B68A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FBCEA1BB10FC360B78A63DB /* libPods-VDFlashLabel-Demo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		086906FAF113FAE560FCAD68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A4B058C142C5742E0170351 /* libPods-VDFlashLabel.a */,
+				06DCB86692BC2272FE8D1DEF /* libPods-VDFlashLabel-Demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76E9A5C21E71A97F005B68A0 = {
+			isa = PBXGroup;
+			children = (
+				76E9A5CD1E71A97F005B68A0 /* VDFlashLabel */,
+				76E9A5EA1E71AA21005B68A0 /* VDFlashLabel-Demo */,
+				76E9A5CC1E71A97F005B68A0 /* Products */,
+				791BA8A0F9C26E420A44EE69 /* Pods */,
+				086906FAF113FAE560FCAD68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		76E9A5CC1E71A97F005B68A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76E9A5E91E71AA21005B68A0 /* VDFlashLabel-Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76E9A5CD1E71A97F005B68A0 /* VDFlashLabel */ = {
+			isa = PBXGroup;
+			children = (
+				76E9A6001E71AA66005B68A0 /* NSTimer+VDAdd.h */,
+				76E9A6011E71AA66005B68A0 /* NSTimer+VDAdd.m */,
+				76E9A6021E71AA66005B68A0 /* UIView+VDFrame.h */,
+				76E9A6031E71AA66005B68A0 /* UIView+VDFrame.m */,
+				76E9A6041E71AA66005B68A0 /* VDFlashLabel.h */,
+				76E9A6051E71AA66005B68A0 /* VDFlashLabel.m */,
+			);
+			path = VDFlashLabel;
+			sourceTree = "<group>";
+		};
+		76E9A5EA1E71AA21005B68A0 /* VDFlashLabel-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				76E9A5EE1E71AA21005B68A0 /* AppDelegate.h */,
+				76E9A5EF1E71AA21005B68A0 /* AppDelegate.m */,
+				76E9A5F11E71AA21005B68A0 /* ViewController.h */,
+				76E9A5F21E71AA21005B68A0 /* ViewController.m */,
+				76E9A5F41E71AA21005B68A0 /* Main.storyboard */,
+				76E9A5F71E71AA21005B68A0 /* Assets.xcassets */,
+				76E9A5F91E71AA21005B68A0 /* LaunchScreen.storyboard */,
+				76E9A5FC1E71AA21005B68A0 /* Info.plist */,
+				76E9A5EB1E71AA21005B68A0 /* Supporting Files */,
+			);
+			path = "VDFlashLabel-Demo";
+			sourceTree = "<group>";
+		};
+		76E9A5EB1E71AA21005B68A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76E9A5EC1E71AA21005B68A0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		791BA8A0F9C26E420A44EE69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEE15633BEBAB99A017DFFDE /* Pods-VDFlashLabel.debug.xcconfig */,
+				A9C3CAAC7BA362E11C75CB7F /* Pods-VDFlashLabel.release.xcconfig */,
+				E2365349A793862B6855B6DB /* Pods-VDFlashLabel-Demo.debug.xcconfig */,
+				02A312542AE56C5A315A0C82 /* Pods-VDFlashLabel-Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76E9A5E81E71AA21005B68A0 /* VDFlashLabel-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76E9A5FF1E71AA21005B68A0 /* Build configuration list for PBXNativeTarget "VDFlashLabel-Demo" */;
+			buildPhases = (
+				BCD5F6659BB7E35506125925 /* [CP] Check Pods Manifest.lock */,
+				76E9A5E51E71AA21005B68A0 /* Sources */,
+				76E9A5E61E71AA21005B68A0 /* Frameworks */,
+				76E9A5E71E71AA21005B68A0 /* Resources */,
+				A66CAE78DDE36DEF5AEDE045 /* [CP] Embed Pods Frameworks */,
+				E196A52E4D634B34174F5B79 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VDFlashLabel-Demo";
+			productName = "VDFlashLabel-Demo";
+			productReference = 76E9A5E91E71AA21005B68A0 /* VDFlashLabel-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76E9A5C31E71A97F005B68A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = vvard3n;
+				TargetAttributes = {
+					76E9A5E81E71AA21005B68A0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 76E9A5C61E71A97F005B68A0 /* Build configuration list for PBXProject "VDFlashLabel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76E9A5C21E71A97F005B68A0;
+			productRefGroup = 76E9A5CC1E71A97F005B68A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76E9A5E81E71AA21005B68A0 /* VDFlashLabel-Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76E9A5E71E71AA21005B68A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76E9A5FB1E71AA21005B68A0 /* LaunchScreen.storyboard in Resources */,
+				76E9A5F81E71AA21005B68A0 /* Assets.xcassets in Resources */,
+				76E9A5F61E71AA21005B68A0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A66CAE78DDE36DEF5AEDE045 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VDFlashLabel-Demo/Pods-VDFlashLabel-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCD5F6659BB7E35506125925 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E196A52E4D634B34174F5B79 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VDFlashLabel-Demo/Pods-VDFlashLabel-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76E9A5E51E71AA21005B68A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76E9A5F31E71AA21005B68A0 /* ViewController.m in Sources */,
+				76E9A5F01E71AA21005B68A0 /* AppDelegate.m in Sources */,
+				76E9A6061E71AA66005B68A0 /* NSTimer+VDAdd.m in Sources */,
+				76E9A6081E71AA66005B68A0 /* VDFlashLabel.m in Sources */,
+				76E9A5ED1E71AA21005B68A0 /* main.m in Sources */,
+				76E9A6071E71AA66005B68A0 /* UIView+VDFrame.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		76E9A5F41E71AA21005B68A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76E9A5F51E71AA21005B68A0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		76E9A5F91E71AA21005B68A0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76E9A5FA1E71AA21005B68A0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		76E9A5E01E71A980005B68A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76E9A5E11E71A980005B68A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76E9A5FD1E71AA21005B68A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2365349A793862B6855B6DB /* Pods-VDFlashLabel-Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "VDFlashLabel-Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.nvar.VDFlashLabel-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		76E9A5FE1E71AA21005B68A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A312542AE56C5A315A0C82 /* Pods-VDFlashLabel-Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "VDFlashLabel-Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.nvar.VDFlashLabel-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76E9A5C61E71A97F005B68A0 /* Build configuration list for PBXProject "VDFlashLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76E9A5E01E71A980005B68A0 /* Debug */,
+				76E9A5E11E71A980005B68A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76E9A5FF1E71AA21005B68A0 /* Build configuration list for PBXNativeTarget "VDFlashLabel-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76E9A5FD1E71AA21005B68A0 /* Debug */,
+				76E9A5FE1E71AA21005B68A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76E9A5C31E71A97F005B68A0 /* Project object */;
+}
