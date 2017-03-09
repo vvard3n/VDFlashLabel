@@ -1,7 +1,7 @@
 # VDFlashLabel
 an auto scroll TextView
 
-![image](https://github.com/vvard3n/VDFlashLabel/demoSource/master/demo.gif)
+![](http://p1.bqimg.com/4851/05a3ba2b2ae70476.gif)
 
 ## init
 
