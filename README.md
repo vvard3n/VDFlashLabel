@@ -13,13 +13,13 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 
 ## dealloc
 
-```
+```objective-c
 [flashLabel kill];
 ```
 
 ## property
 
-```
+```objective-c
 /**
  水平间距
  */
