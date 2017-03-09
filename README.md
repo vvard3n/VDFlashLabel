@@ -41,7 +41,7 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 
 ## Delegate
 
-```
+```objective-c
 /**
  点击文本
  */
