@@ -245,11 +245,23 @@
 }
 
 - (void)reloadData {
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(flashLabelWillRefreshData:)]) {
+            [self.delegate flashLabelWillRefreshData:self];
+        }
+    }
+    
     [self.lblArr enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
     [self.lblArr removeAllObjects];
     [self showData:self.stringArray];
+    
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(flashLabelDidRefreshData:)]) {
+            [self.delegate flashLabelDidRefreshData:self];
+        }
+    }
 }
 
 - (void)changeContentOffset {

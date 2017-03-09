@@ -13,7 +13,20 @@
 @protocol VDFlashLabelDelegate <NSObject>
 
 @optional
+
+/**
+ 控件即将刷新
+ */
 - (void)flashLabelWillRefreshData:(VDFlashLabel *)flashLabel;
+
+/**
+ 控件已经刷新
+ */
+- (void)flashLabelDidRefreshData:(VDFlashLabel *)flashLabel;
+
+/**
+ 点击文本
+ */
 - (void)flashLabelDidTapView:(UIView *)view;
 
 @end

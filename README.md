@@ -17,6 +17,49 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 [flashLabel kill];
 ```
 
+## Func
+
+```objective-c
+/**
+ 停止自动滚动
+ */
+- (void)stopAutoScroll;
+
+/**
+ 继续自动滚动
+ */
+- (void)continueAutoScroll;
+
+/**
+ 重新加载
+ 重新设置数据源后可调用此方法刷新数据
+ */
+- (void)reloadData;
+```
+
+
+
+## Delegate
+
+```
+/**
+ 点击文本
+ */
+- (void)flashLabelWillRefreshData:(VDFlashLabel *)flashLabel;
+
+/**
+ 控件即将刷新
+ */
+- (void)flashLabelWillTapView:(UIView *)view;
+
+/**
+ 控件已经刷新
+ */
+- (void)flashLabelDidTapView:(UIView *)view;
+```
+
+
+
 ## property
 
 ```objective-c
