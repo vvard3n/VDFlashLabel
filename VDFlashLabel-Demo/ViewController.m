@@ -20,6 +20,22 @@
 @end
 
 @implementation ViewController
+- (IBAction)pushBtnClick:(id)sender {
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)pauseBtnClick:(UIButton *)sender {
+    if ([sender.currentTitle isEqualToString:@"Pause"]) {
+        [sender setTitle:@"Continue" forState:UIControlStateNormal];
+        [self.flashLabel1 stopAutoScroll];
+    }
+    else {
+        [sender setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.flashLabel1 continueAutoScroll];
+    }
+}
 
 - (IBAction)rightBtnClick:(id)sender {
     NSArray *strArr = @[

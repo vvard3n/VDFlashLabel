@@ -93,6 +93,11 @@ typedef NS_OPTIONS(NSUInteger, VDFlashLabelAutoScrollDirection) {
 - (void)stopAutoScroll;
 
 /**
+ 继续自动滚动
+ */
+- (void)continueAutoScroll;
+
+/**
  重新加载
  */
 - (void)reloadData;

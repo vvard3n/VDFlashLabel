@@ -236,6 +236,14 @@
     self.autoScrollDisplayLink = nil;
 }
 
+- (void)continueAutoScroll {
+    if (!self.autoScrollDisplayLink && self.lblArr.count != 0 && self.shufflingInfoScrollView.contentSize.width >= self.bounds.size.width) {
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeContentOffset)];
+        self.autoScrollDisplayLink = displayLink;
+        [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    }
+}
+
 - (void)reloadData {
     [self.lblArr enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];

@@ -68,7 +68,29 @@
                     <view key="view" contentMode="scaleToFill" id="OQx-vy-0ql">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu8-dg-X6s">
+                                <rect key="frame" x="166" y="629" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseBtnClick:" destination="oLD-2u-RcA" eventType="touchUpInside" id="OxO-t1-Zf4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-Uk-8ug">
+                                <rect key="frame" x="157.5" y="591" width="59" height="30"/>
+                                <state key="normal" title="Push VC"/>
+                                <connections>
+                                    <action selector="pushBtnClick:" destination="oLD-2u-RcA" eventType="touchUpInside" id="v9d-1w-5cn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bu8-dg-X6s" firstAttribute="centerX" secondItem="OQx-vy-0ql" secondAttribute="centerX" id="Ea7-jw-GKu"/>
+                            <constraint firstItem="l6j-yn-Cqf" firstAttribute="top" secondItem="bu8-dg-X6s" secondAttribute="bottom" constant="8" id="Nyz-S6-LOD"/>
+                            <constraint firstItem="bu8-dg-X6s" firstAttribute="top" secondItem="Ig9-Uk-8ug" secondAttribute="bottom" constant="8" id="PTL-gN-AVr"/>
+                            <constraint firstItem="Ig9-Uk-8ug" firstAttribute="centerX" secondItem="OQx-vy-0ql" secondAttribute="centerX" id="e8G-gr-jhz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Demo" id="fn8-dS-fDf">
                         <barButtonItem key="rightBarButtonItem" title="Change text" id="IhZ-q5-5ha">
