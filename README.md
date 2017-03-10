@@ -43,17 +43,17 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 
 ```objective-c
 /**
- 点击文本
+ 控件即将刷新
  */
 - (void)flashLabelWillRefreshData:(VDFlashLabel *)flashLabel;
 
 /**
- 控件即将刷新
+ 控件已经刷新
  */
-- (void)flashLabelWillTapView:(UIView *)view;
+- (void)flashLabelDidRefreshData:(VDFlashLabel *)flashLabel;
 
 /**
- 控件已经刷新
+ 点击文本
  */
 - (void)flashLabelDidTapView:(UIView *)view;
 ```
@@ -69,12 +69,17 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 @property (nonatomic, assign) CGFloat hspace;
 
 /**
+ 行高
+ */
+@property (nonatomic, assign) CGFloat lineHeight;
+
+/**
  自动滚动
  */
 @property (nonatomic, assign) BOOL autoScroll;
 
 /**
- 允许用户滚动
+ 允许用户滚动，打开后自动关闭自动滚动
  */
 @property (nonatomic, assign) BOOL userScroolEnabled;
 
@@ -84,9 +89,13 @@ VDFlashLabe *flashLbl = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 64
 @property (nonatomic, strong) UIColor *backColor;
 
 /**
- 自动滚动方向
+ 滚动方向
+    VDFlashLabelScrollDirectionLeft,
+    VDFlashLabelScrollDirectionRight,
+    VDFlashLabelScrollDirectionTop,
+    VDFlashLabelScrollDirectionDown,
  */
-@property (nonatomic, assign) VDFlashLabelAutoScrollDirection autoScrollDirection;
+@property (nonatomic, assign) VDFlashLabelScrollDirection scrollDirection;
 
 /**
  数据源

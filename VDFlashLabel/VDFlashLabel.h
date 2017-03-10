@@ -32,14 +32,29 @@
 @end
 
 /**
- 自动滚动方向
+ 滚动方向
 
- - VDFlashLabelAutoScrollDirectionLeft: 元素向左滚动
- - VDFlashLabelAutoScrollDirectionright: 元素向右滚动
+ - VDFlashLabelScrollDirectionLeft: 元素向左滚动
+ - VDFlashLabelScrollDirectionRight: 元素向右滚动
+ - VDFlashLabelScrollDirectionTop: 元素向上滚动
+ - VDFlashLabelScrollDirectionDown: 元素向下滚动
  */
-typedef NS_OPTIONS(NSUInteger, VDFlashLabelAutoScrollDirection) {
-    VDFlashLabelAutoScrollDirectionLeft = 1 << 0,
-    VDFlashLabelAutoScrollDirectionRight = 1 << 1,
+typedef NS_OPTIONS(NSUInteger, VDFlashLabelScrollDirection) {
+    VDFlashLabelScrollDirectionLeft = 1 << 0,
+    VDFlashLabelScrollDirectionRight = 1 << 1,
+    VDFlashLabelScrollDirectionTop = 1 << 2,
+    VDFlashLabelScrollDirectionDown = 1 << 3,
+};
+
+/**
+ 自动滚动方式
+
+ - VDFlashLabelAutoScrollModePoint: 按Pt滚动
+ - VDFlashLabelAutoScrollModePaging: 按页滚动
+ */
+typedef NS_OPTIONS(NSUInteger, VDFlashLabelAutoScrollMode) {
+    VDFlashLabelAutoScrollModePoint = 1 << 0,
+    VDFlashLabelAutoScrollModePaging = 1 << 1,
 };
 
 @interface VDFlashLabel : UIView
@@ -49,6 +64,10 @@ typedef NS_OPTIONS(NSUInteger, VDFlashLabelAutoScrollDirection) {
  */
 @property (nonatomic, assign) CGFloat hspace;
 
+/**
+ 行高
+ */
+@property (nonatomic, assign) CGFloat lineHeight;
 
 /**
  自动滚动
@@ -66,9 +85,19 @@ typedef NS_OPTIONS(NSUInteger, VDFlashLabelAutoScrollDirection) {
 @property (nonatomic, strong) UIColor *backColor;
 
 /**
- 自动滚动方向
+ 滚动方向
  */
-@property (nonatomic, assign) VDFlashLabelAutoScrollDirection autoScrollDirection;
+@property (nonatomic, assign) VDFlashLabelScrollDirection scrollDirection;
+
+///**
+// 开启翻页模式，非像素滚动
+// */
+//@property (nonatomic, assign) BOOL pagingEnabled;
+//
+///**
+// 自动翻页间隔时间，默认三秒
+// */
+//@property (nonatomic, assign) CGFloat autoPagingTime;
 
 /**
  数据源

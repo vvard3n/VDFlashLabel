@@ -20,8 +20,10 @@
 @property (nonatomic, weak) UIView *topInfoLine;
 
 @property (nonatomic, assign) CGFloat scrollX;
+@property (nonatomic, assign) CGFloat scrollY;
 @property (nonatomic, assign) CGFloat everyScrollPt;
 @property (nonatomic, assign) CGFloat trueWidth;
+@property (nonatomic, assign) CGFloat trueHeight;
 
 @property (nonatomic, strong) NSTimer *autoRefreshTimer;
 @property (nonatomic, strong) CADisplayLink *autoScrollDisplayLink;
@@ -57,8 +59,11 @@
         self.stringArray = arr;
         self.scrollX = 0.0;
         self.autoScroll = YES;
-        self.autoScrollDirection = VDFlashLabelAutoScrollDirectionLeft;
+        self.scrollDirection = VDFlashLabelScrollDirectionLeft;
         self.everyScrollPt = 0.5;
+//        self.pagingEnabled = NO;
+//        self.autoPagingTime = 3.0;
+        self.lineHeight = 40.0;
     }
     return self;
 }
@@ -126,6 +131,7 @@
         }
         
         __block CGFloat contentSizeWidth = 0.0;
+        __block CGFloat contentSizeHeight = 0.0;
         [dataArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj isKindOfClass:[NSString class]]) {
                 self.lblArr[idx].text = obj;
@@ -137,17 +143,29 @@
                 NSLog(@"No support data：%@", obj);
             }
             [self.lblArr[idx] sizeToFit];
-            self.lblArr[idx].height = 40;
-            if (idx == 0) {
-                self.lblArr[idx].x = self.hspace;
+            self.lblArr[idx].height = self.lineHeight;
+            if (self.scrollDirection & VDFlashLabelScrollDirectionTop || self.scrollDirection & VDFlashLabelScrollDirectionDown) {
+                if (idx == 0) {
+                    self.lblArr[idx].y = 0;
+                }
+                else {
+                    self.lblArr[idx].y = self.lblArr[idx - 1].y + self.lblArr[idx - 1].height;
+                }
+                contentSizeHeight += self.lblArr[idx].height;
             }
-            else {
-                self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+            else if (self.scrollDirection & VDFlashLabelScrollDirectionLeft || self.scrollDirection & VDFlashLabelScrollDirectionRight) {
+                if (idx == 0) {
+                    self.lblArr[idx].x = self.hspace;
+                }
+                else {
+                    self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+                }
+                contentSizeWidth += self.hspace + self.lblArr[idx].width;
             }
-            contentSizeWidth += self.hspace + self.lblArr[idx].width;
         }];
         
         self.trueWidth = contentSizeWidth;
+        self.trueHeight = contentSizeHeight;
         
         [dataArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * _Nonnull stop) {
             idx += self.stringArray.count;
@@ -161,14 +179,25 @@
                 NSLog(@"No support data：%@", obj);
             }
             [self.lblArr[idx] sizeToFit];
-            self.lblArr[idx].height = 40;
-            if (idx == 0) {
-                self.lblArr[idx].x = self.hspace;
+            self.lblArr[idx].height = self.lineHeight;
+            if (self.scrollDirection & VDFlashLabelScrollDirectionTop || self.scrollDirection & VDFlashLabelScrollDirectionDown) {
+                if (idx == 0) {
+                    self.lblArr[idx].y = 0;
+                }
+                else {
+                    self.lblArr[idx].y = self.lblArr[idx - 1].y + self.lblArr[idx - 1].height;
+                }
+                contentSizeHeight += self.lblArr[idx].height;
             }
-            else {
-                self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+            else if ((self.scrollDirection & VDFlashLabelScrollDirectionLeft) || (self.scrollDirection & VDFlashLabelScrollDirectionRight)) {
+                if (idx == 0) {
+                    self.lblArr[idx].x = self.hspace;
+                }
+                else {
+                    self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+                }
+                contentSizeWidth += self.hspace + self.lblArr[idx].width;
             }
-            contentSizeWidth += self.lblArr[idx].width;
         }];
         [dataArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * _Nonnull stop) {
             idx += self.stringArray.count * 2;
@@ -182,18 +211,29 @@
                 NSLog(@"No support data：%@", obj);
             }
             [self.lblArr[idx] sizeToFit];
-            self.lblArr[idx].height = 40;
-            if (idx == 0) {
-                self.lblArr[idx].x = self.hspace;
+            self.lblArr[idx].height = self.lineHeight;
+            if ((self.scrollDirection & VDFlashLabelScrollDirectionTop) || (self.scrollDirection & VDFlashLabelScrollDirectionDown)) {
+                if (idx == 0) {
+                    self.lblArr[idx].y = 0;
+                }
+                else {
+                    self.lblArr[idx].y = self.lblArr[idx - 1].y + self.lblArr[idx - 1].height;
+                }
+                contentSizeHeight += self.lblArr[idx].height;
             }
-            else {
-                self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+            else if (self.scrollDirection & VDFlashLabelScrollDirectionLeft || self.scrollDirection & VDFlashLabelScrollDirectionRight) {
+                if (idx == 0) {
+                    self.lblArr[idx].x = self.hspace;
+                }
+                else {
+                    self.lblArr[idx].x = self.hspace + self.lblArr[idx - 1].x + self.lblArr[idx - 1].width;
+                }
+                contentSizeWidth += self.hspace + self.lblArr[idx].width;
             }
-            contentSizeWidth += self.lblArr[idx].width;
         }];
         
-        self.shufflingInfoScrollView.contentSize = CGSizeMake(contentSizeWidth, 0);
-        self.shufflingInfoScrollView.contentOffset = CGPointMake(self.trueWidth, 0);
+        self.shufflingInfoScrollView.contentSize = CGSizeMake(contentSizeWidth, contentSizeHeight);
+        self.shufflingInfoScrollView.contentOffset = CGPointMake(self.trueWidth, self.trueHeight);
     }
 }
 
@@ -214,22 +254,26 @@
 }
 
 - (void)startAutoScroll {
-    if (self.autoScroll && !self.autoScrollDisplayLink && self.lblArr.count != 0 && self.shufflingInfoScrollView.contentSize.width >= self.bounds.size.width) {
+    if (self.autoScroll && !self.autoScrollDisplayLink && self.lblArr.count != 0) {
+//        if (self.shufflingInfoScrollView.contentSize.width >= self.bounds.size.width) {
+//            <#statements#>
+//        }
         CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeContentOffset)];
         self.autoScrollDisplayLink = displayLink;
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+        
     }
 }
 
-- (void)startAutoRefreshStock {
-    if (!self.autoRefreshTimer) {
-        NSTimer *autoRefreshTimer = [NSTimer timerWithTimeInterval:30 block:^(NSTimer * _Nonnull timer) {
-            
-        } repeats:YES];
-        self.autoRefreshTimer = autoRefreshTimer;
-        [[NSRunLoop mainRunLoop] addTimer:autoRefreshTimer forMode:NSRunLoopCommonModes];
-    }
-}
+//- (void)startAutoRefreshStock {
+//    if (!self.autoRefreshTimer) {
+//        NSTimer *autoRefreshTimer = [NSTimer timerWithTimeInterval:30 block:^(NSTimer * _Nonnull timer) {
+//            
+//        } repeats:YES];
+//        self.autoRefreshTimer = autoRefreshTimer;
+//        [[NSRunLoop mainRunLoop] addTimer:autoRefreshTimer forMode:NSRunLoopCommonModes];
+//    }
+//}
 
 - (void)stopAutoScroll {
     [self.autoScrollDisplayLink invalidate];
@@ -237,7 +281,7 @@
 }
 
 - (void)continueAutoScroll {
-    if (!self.autoScrollDisplayLink && self.lblArr.count != 0 && self.shufflingInfoScrollView.contentSize.width >= self.bounds.size.width) {
+    if (!self.autoScrollDisplayLink && self.lblArr.count != 0) {
         CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeContentOffset)];
         self.autoScrollDisplayLink = displayLink;
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
@@ -266,25 +310,43 @@
 
 - (void)changeContentOffset {
     if (self.shufflingInfoScrollView) {
-        if (self.autoScrollDirection & VDFlashLabelAutoScrollDirectionLeft) {
+        if (self.scrollDirection & VDFlashLabelScrollDirectionLeft) {
             self.scrollX += self.everyScrollPt;
         }
-        else if (self.autoScrollDirection & VDFlashLabelAutoScrollDirectionRight) {
+        else if (self.scrollDirection & VDFlashLabelScrollDirectionRight) {
             self.scrollX -= self.everyScrollPt;
         }
-        self.shufflingInfoScrollView.contentOffset = CGPointMake(self.scrollX, 0);
+        else if (self.scrollDirection & VDFlashLabelScrollDirectionTop) {
+            self.scrollY += self.everyScrollPt;
+        }
+        else if (self.scrollDirection & VDFlashLabelScrollDirectionDown) {
+            self.scrollY -= self.everyScrollPt;
+        }
+        self.shufflingInfoScrollView.contentOffset = CGPointMake(self.scrollX, self.scrollY);
     }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.lblArr.count == 0) return;
-    if (scrollView.contentOffset.x > self.lblArr[self.stringArray.count * 2 - 1].x + self.lblArr[self.stringArray.count - 1].width) {
-        scrollView.contentOffset = CGPointMake(self.trueWidth, 0);
-        self.scrollX = self.trueWidth;
+    if (self.scrollDirection & VDFlashLabelScrollDirectionLeft || self.scrollDirection & VDFlashLabelScrollDirectionRight) {
+        if (scrollView.contentOffset.x > self.lblArr[self.stringArray.count * 2 - 1].x + self.lblArr[self.stringArray.count - 1].width) {
+            scrollView.contentOffset = CGPointMake(self.trueWidth, 0);
+            self.scrollX = self.trueWidth;
+        }
+        else if (scrollView.contentOffset.x <= 0) {
+            scrollView.contentOffset = CGPointMake(self.trueWidth, 0);
+            self.scrollX = self.trueWidth;
+        }
     }
-    else if (scrollView.contentOffset.x <= 0) {
-        scrollView.contentOffset = CGPointMake(self.trueWidth, 0);
-        self.scrollX = self.trueWidth;
+    else if (self.scrollDirection & VDFlashLabelScrollDirectionTop || self.scrollDirection & VDFlashLabelScrollDirectionDown) {
+        if (scrollView.contentOffset.y > self.lblArr[self.stringArray.count * 2 - 1].y + self.lblArr[self.stringArray.count - 1].height) {
+            scrollView.contentOffset = CGPointMake(0, self.trueHeight);
+            self.scrollY = self.trueHeight;
+        }
+        else if (scrollView.contentOffset.y <= 0) {
+            scrollView.contentOffset = CGPointMake(0, self.trueHeight);
+            self.scrollY = self.trueHeight;
+        }
     }
 }
 

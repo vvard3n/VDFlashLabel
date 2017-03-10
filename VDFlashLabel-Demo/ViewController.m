@@ -82,7 +82,7 @@
     
     // 便利构造器创建带样式字符串
     VDFlashLabel *flashLbl1 = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 104, [UIScreen mainScreen].bounds.size.width, 40) hspace:10 stringArray:attStrArr];
-    flashLbl1.autoScrollDirection = VDFlashLabelAutoScrollDirectionRight;
+    flashLbl1.scrollDirection = VDFlashLabelScrollDirectionRight;
     [self.view addSubview:flashLbl1];
     self.flashLabel1 = flashLbl1;
     
@@ -104,8 +104,9 @@
     
     // 混合样式
     VDFlashLabel *flashLbl4 = [VDFlashLabel createFlashLabelWithFrame:CGRectMake(0, 224, [UIScreen mainScreen].bounds.size.width, 40) hspace:10 stringArray:mutiStrArr];
-    flashLbl4.autoScroll = NO;
-    flashLbl4.userScroolEnabled = YES;
+    flashLbl4.autoScroll = YES;
+    flashLbl4.scrollDirection = VDFlashLabelScrollDirectionDown;
+    flashLbl4.hspace = 0;
     [self.view addSubview:flashLbl4];
     self.flashLabel4 = flashLbl4;
     
