@@ -28,7 +28,6 @@
 @property (nonatomic, strong) NSTimer *autoRefreshTimer;
 @property (nonatomic, strong) CADisplayLink *autoScrollDisplayLink;
 
-
 @end
 
 @implementation VDFlashLabel
